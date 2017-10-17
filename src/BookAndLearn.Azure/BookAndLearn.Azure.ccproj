@@ -37,6 +37,14 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookAndLearn.API\BookAndLearn.API.csproj">
+      <Name>BookAndLearn.API</Name>
+      <Project>{4fa66785-f5e5-41f2-b821-5491337df7a6}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>BookAndLearn.API</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
     <ProjectReference Include="..\BookAndLearn.Web\BookAndLearn.Web.csproj">
       <Name>BookAndLearn.Web</Name>
       <Project>{bc564d4d-3090-4714-a026-ff9cffb4dc95}</Project>
@@ -47,10 +55,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BookAndLearn.APIContent\" />
     <Folder Include="BookAndLearn.WebContent\" />
     <Folder Include="Profiles" />
   </ItemGroup>
   <ItemGroup>
+    <DiagnosticsConfiguration Include="BookAndLearn.APIContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="BookAndLearn.WebContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
