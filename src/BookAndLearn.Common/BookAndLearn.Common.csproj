@@ -59,7 +59,6 @@
     <Compile Include="Entities\LessonType.cs" />
     <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\Room.cs" />
-    <Compile Include="BookAndLearnContext.cs" />
     <Compile Include="Entities\Status.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\StudentLessonPlace.cs" />

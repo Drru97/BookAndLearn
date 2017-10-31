@@ -159,6 +159,10 @@
       <Project>{9E5F3A95-5CD4-4B97-8D24-31FA05D315F5}</Project>
       <Name>BookAndLearn.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BookAndLearn.DataAccess\BookAndLearn.DataAccess.csproj">
+      <Project>{1ed3aff3-998b-4ef0-9aea-ed7600cd3040}</Project>
+      <Name>BookAndLearn.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

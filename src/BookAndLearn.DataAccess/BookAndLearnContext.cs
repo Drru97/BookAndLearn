@@ -1,7 +1,7 @@
 using System.Data.Entity;
 using BookAndLearn.Common.Entities;
 
-namespace BookAndLearn.Common
+namespace BookAndLearn.DataAccess
 {
     public class BookAndLearnContext : DbContext
     {
