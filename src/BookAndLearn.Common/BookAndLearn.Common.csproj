@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Group.cs" />
+    <Compile Include="Entities\Lecturer.cs" />
+    <Compile Include="Entities\Lesson.cs" />
+    <Compile Include="Entities\LessonGroup.cs" />
+    <Compile Include="Entities\LessonPlace.cs" />
+    <Compile Include="Entities\LessonSchedule.cs" />
+    <Compile Include="Entities\LessonType.cs" />
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\Room.cs" />
+    <Compile Include="BookAndLearnContext.cs" />
+    <Compile Include="Entities\Status.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\StudentLessonPlace.cs" />
+    <Compile Include="Entities\Subject.cs" />
+    <Compile Include="Entities\SubjectDay.cs" />
+    <Compile Include="Entities\SubjectLecturer.cs" />
+    <Compile Include="Entities\WeekFrequency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
