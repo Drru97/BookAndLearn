@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
+using BookAndLearn.Common.Entities;
+using BookAndLearn.DataAccess;
+using BookAndLearn.DataAccess.Repositories;
 
 namespace BookAndLearn.Web.Controllers
 {
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            var repo = new Repository<Student>(new BookAndLearnContext());
+            var students = await repo.GetAllAsync();
+
             return View();
         }
     }
