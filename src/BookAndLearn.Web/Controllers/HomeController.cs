@@ -8,11 +8,16 @@ namespace BookAndLearn.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IRepository<Student> _studentRepository;
+
+        public HomeController(IRepository<Student> studentRepository)
+        {
+            _studentRepository = studentRepository;
+        }
         // GET: Home
         public async Task<ActionResult> Index()
         {
-            var repo = new Repository<Student>(new BookAndLearnContext());
-            var students = await repo.GetAllAsync();
+            var students = await _studentRepository.GetAllAsync();
 
             return View();
         }
