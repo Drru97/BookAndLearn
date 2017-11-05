@@ -12,6 +12,7 @@ namespace BookAndLearn.Web.Infrastructure
             Bind(typeof(IRepository<>)).To(typeof(Repository<>));
 
             Bind<ILessonsService>().To<LessonsService>();
+            Bind<IStudentService>().To<StudentService>();
         }
     }
 }

@@ -6,6 +6,8 @@ using BookAndLearn.DataAccess.Repositories;
 using System.Collections.Generic;
 using BookAndLearn.Services.Concrete;
 using System.Linq;
+using System.Linq.Expressions;
+using System;
 
 namespace BookAndLearn.Tests
 {
@@ -44,7 +46,7 @@ namespace BookAndLearn.Tests
                 new Lesson{Id = 1, LessonGroups = new List<LessonGroup>{ new LessonGroup { GroupId = groupId } } }
             };
 
-            mock.Setup(foo => foo.GetAsync(x => x.LessonGroups.Any(y => y.GroupId == groupId)))
+            mock.Setup(foo => foo.GetAsync(It.IsAny<Expression<Func<Lesson, bool>>>()))
                 .ReturnsAsync(() => lessons);
 
             var obj = mock.Object;
