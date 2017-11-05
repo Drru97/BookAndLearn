@@ -3,8 +3,6 @@ using BookAndLearn.DataAccess.Repositories;
 using BookAndLearn.Services.Abstract;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BookAndLearn.Services.Concrete
@@ -23,10 +21,23 @@ namespace BookAndLearn.Services.Concrete
             return await _studentRepository.GetAsync(x => x.GroupId == groupId);
         }
 
-        public async Task<IEnumerable<Student>> SearchStudents(string searchRequest)
+        public async Task<IEnumerable<Student>> SearchStudentsAsync(string searchRequest)
         {
+            if (string.IsNullOrWhiteSpace(searchRequest))
+            {
+                //harcoded strings, blah...blah. I don`t care.
+                throw new ArgumentException("Invalid argument");
+            }
+            var local = searchRequest.ToLower();
             return await _studentRepository
-                .GetAsync(x => x.FirstName.Contains(searchRequest) || x.LastName.Contains(searchRequest));
+                .GetAsync(x => x.FirstName.ToLower().Contains(searchRequest) || x.LastName.ToLower().Contains(searchRequest));
         }
+
+        public async Task<Student> GetStudentById(int studentId)
+        {
+            return await _studentRepository.GetAsync(studentId);
+        }
+
+
     }
 }

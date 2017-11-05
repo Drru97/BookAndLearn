@@ -25,7 +25,7 @@ namespace BookAndLearn.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> Search(string searchString)
         {
-            var searchResults = await _studentServices.SearchStudents(searchString);
+            var searchResults = await _studentServices.SearchStudentsAsync(searchString);
             return View(searchResults);
         }
     }
