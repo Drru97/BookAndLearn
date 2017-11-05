@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ILessonsService.cs" />
+    <Compile Include="Concrete\LessonsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookAndLearn.Common\BookAndLearn.Common.csproj">
+      <Project>{9E5F3A95-5CD4-4B97-8D24-31FA05D315F5}</Project>
+      <Name>BookAndLearn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookAndLearn.DataAccess\BookAndLearn.DataAccess.csproj">
+      <Project>{1ED3AFF3-998B-4EF0-9AEA-ED7600CD3040}</Project>
+      <Name>BookAndLearn.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

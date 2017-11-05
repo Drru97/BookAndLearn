@@ -66,6 +66,7 @@
     <Compile Include="Entities\SubjectDay.cs" />
     <Compile Include="Entities\SubjectLecturer.cs" />
     <Compile Include="Entities\WeekFrequency.cs" />
+    <Compile Include="Enums\DayOfWeekEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using BookAndLearn.Common.Entities;
-using BookAndLearn.DataAccess;
 using BookAndLearn.DataAccess.Repositories;
 
 namespace BookAndLearn.Web.Controllers
