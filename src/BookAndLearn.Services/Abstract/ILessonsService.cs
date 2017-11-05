@@ -11,5 +11,7 @@ namespace BookAndLearn.Services.Abstract
     {
         Task<IEnumerable<Lesson>> GetLessonsAsync();
         Task<IEnumerable<Lesson>> GetLessonsByDayAsync(DayOfWeek dayOfWeek);
+        Task<IEnumerable<Lesson>> GetLessonsByGroupAsync(int groupId);
+        Task<IEnumerable<Lesson>> GetLessonsByGroupAndDayOfWeekAsync(int groupId, DayOfWeek dayOfWeek);
     }
 }
