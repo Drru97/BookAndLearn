@@ -325,6 +325,7 @@ INSERT INTO [dbo].[Lesson] ([Id], [RoomId], [SubjectId], [LecturerId], [LessonTy
 -------------------------
 
 SET IDENTITY_INSERT [dbo].[Lesson] OFF
+GO
 
 ----------##########----------##########----------
 
@@ -365,6 +366,7 @@ INSERT INTO [dbo].[LessonGroups] ([Id], [LessonId], [GroupId]) VALUES
 -------------------------
 
 SET IDENTITY_INSERT [dbo].[LessonGroups] OFF
+GO
 
 ----------##########----------##########----------
 
@@ -462,5 +464,33 @@ INSERT INTO [dbo].[Student] ([Id], [LastName], [FirstName], [GroupId]) VALUES
 	(81, N'Юзьків', N'Артур', 4)
 
 SET IDENTITY_INSERT [dbo].[Student] OFF
+GO
+
+----------##########----------##########----------
+/*
+SET IDENTITY_INSERT [dbo].[User] ON
+
+INSERT INTO [dbo].[User] ([Id], [UserName], [Password]) VALUES
+	(N'1', N'test', N'test'),
+	(N'2', N'admin', N'admin'),
+	(N'3', N'user', N'user')
+
+SET IDENTITY_INSERT [dbo].[User] OFF
+GO
+*/
+----------##########----------##########----------
+-- ASP.NET Identity tables
+
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES
+	(1, N'user')
+GO
+
+INSERT INTO [dbo].[AspNetUsers] ([Id], [Username], [PasswordHash], [EmailConfirmed], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnabled], [AccessFailedCount]) VALUES
+	(1, N'bohdan', N'AAOJd2uzy2Fx6DCygFY+PHLb5fV1lmycOM55h0Bnt+BOorl2LHnxmKeSYL4tnEENxw==', 0, 0, 0, 0, 0)
+GO
+
+INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES
+	(1, 1)
+GO
 
 ----------##########----------##########----------
