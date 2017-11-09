@@ -124,6 +124,7 @@ namespace BookAndLearn.DataAccess
                 .HasMany(e => e.SubjectDays)
                 .WithRequired(e => e.WeekFrequency)
                 .WillCascadeOnDelete(false);
+
         }
     }
 }
