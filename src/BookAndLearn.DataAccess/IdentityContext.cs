@@ -7,5 +7,10 @@ namespace BookAndLearn.DataAccess
         public IdentityContext() : base("name=BookAndLearn", throwIfV1Schema:false)
         {
         }
+
+        public static IdentityContext Create()
+        {
+            return new IdentityContext();
+        }
     }
 }

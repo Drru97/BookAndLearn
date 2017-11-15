@@ -1,0 +1,48 @@
+﻿@model BookAndLearn.Web.Models.Account.LoginViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Увійти</h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = Html.DisplayNameFor(x => x.Username) } })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = Html.DisplayNameFor(x => x.Password) } })
+                            </div>
+
+                            <input type="submit" value="Увійти" class="btn btn-info btn-block" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "Register")
+    </div>
+</body>
+</html>

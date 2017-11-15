@@ -485,8 +485,8 @@ INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES
 	(1, N'user')
 GO
 
-INSERT INTO [dbo].[AspNetUsers] ([Id], [Username], [PasswordHash], [EmailConfirmed], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnabled], [AccessFailedCount]) VALUES
-	(1, N'bohdan', N'AAOJd2uzy2Fx6DCygFY+PHLb5fV1lmycOM55h0Bnt+BOorl2LHnxmKeSYL4tnEENxw==', 0, 0, 0, 0, 0)
+INSERT INTO [dbo].[AspNetUsers] ([Id], [Username], [PasswordHash], [SecurityStamp], [EmailConfirmed], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnabled], [AccessFailedCount]) VALUES
+	(1, N'bohdan', N'AAOJd2uzy2Fx6DCygFY+PHLb5fV1lmycOM55h0Bnt+BOorl2LHnxmKeSYL4tnEENxw==', N'e542ef26-afbc-4d08-a64c-27562f6b6ac2', 0, 0, 0, 0, 0)
 GO
 
 INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES

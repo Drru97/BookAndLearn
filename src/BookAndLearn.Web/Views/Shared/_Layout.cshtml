@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,6 +19,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Hello, " + User.Identity.GetUserName(), "Index", "Home")
+                @Html.ActionLink("Logout", "Logout", "Account")
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

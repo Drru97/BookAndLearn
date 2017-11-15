@@ -1,0 +1,79 @@
+﻿@model BookAndLearn.Web.Models.Account.RegistrationViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Зареєструйтесь, будь ласка! <small>Це безкоштовно!</small></h3>
+                    </div>
+                    <div class="panel-body">
+                        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = Html.DisplayNameFor(x => x.Username) } })
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = Html.DisplayNameFor(x => x.Password) } })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = Html.DisplayNameFor(x => x.ConfirmPassword) } })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.FullName.LastName, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = Html.DisplayNameFor(x => x.FullName.LastName) } })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.FullName.FirstName, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = HttpUtility.HtmlDecode(Html.DisplayNameFor(x => x.FullName.FirstName).ToHtmlString()) } })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.DropDownListFor(model => model.SelectedGroupId,
+                               Model.Groups.Select(g => new SelectListItem
+                               {
+                                   Text = g.Name,
+                                   Value = g.Id.ToString()
+                               }), new { @class = "form-control input-sm" })
+                            </div>
+
+                            <input type="submit" value="Зареєструватись" class="btn btn-info btn-block" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to List", "Register")
+    </div>
+</body>
+</html>
